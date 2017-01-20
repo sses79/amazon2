@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
-import { Observable } from 'rxjs/Rx';
+// import { Observable } from 'rxjs/Rx';
 import { LoadingController, Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
@@ -34,7 +34,7 @@ export class AuthService {
 
     this.events.subscribe('authenticated', authResult => {
       debugger;
-      console.log(authResult)
+      console.log(authResult);
       this.storage.set('id_token', authResult.access_token);
       this.idToken = authResult.access_token;
 

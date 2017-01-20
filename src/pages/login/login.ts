@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
-import { UsersPage } from '../users/users';
+// import { UsersPage } from '../users/users';
 /*
   Generated class for the Login page.
 
