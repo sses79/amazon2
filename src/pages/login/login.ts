@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
-// import { UsersPage } from '../users/users';
+import { OrganisationsPage } from '../organisations/organisations';
 /*
   Generated class for the Login page.
 
@@ -22,6 +22,7 @@ export class LoginPage {
 
   login(credentials) {
     this.auth.login(credentials);
+    this.navCtrl.push(OrganisationsPage);
   }
 
 

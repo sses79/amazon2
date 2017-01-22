@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { AuthHttp, JwtHelper, tokenNotExpired } from 'angular2-jwt';
-// import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Rx';
 import { LoadingController, Events } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+
+import { Phone } from '../models/phone';
 
 @Injectable()
 export class AuthService {
@@ -33,16 +35,12 @@ export class AuthService {
     });
 
     this.events.subscribe('authenticated', authResult => {
-      debugger;
+      // debugger;
       console.log(authResult);
       this.storage.set('id_token', authResult.access_token);
       this.idToken = authResult.access_token;
 
       this.storage.set('refresh_token', authResult.refresh_token);
-
-      this.storage.get('id_token').then(token => {
-        console.log(token);
-      });
 
       // Schedule a token refresh
       // this.scheduleRefresh();
@@ -57,6 +55,11 @@ export class AuthService {
 
     });
 
+  }
+
+  load(): Observable<Phone> {
+    return this.authHttp.get('http://link5g.com/api/user')
+      .map(res => res.json());
   }
 
   public login(credentials) {
