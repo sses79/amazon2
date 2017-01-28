@@ -5,4 +5,5 @@ export interface Phone {
   id: number;
   email: string;
   name: string;
+  imageUrl: string;
 }

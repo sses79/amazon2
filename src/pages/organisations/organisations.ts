@@ -14,13 +14,13 @@ import {AuthService} from '../../providers/auth-service';
   templateUrl: 'organisations.html'
 })
 export class OrganisationsPage {
-  phone: Phone;
+  phones: Phone[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private authService: AuthService) {
-    authService.load().subscribe( data => {
-      this.phone = data;
-      console.log(data);
-    });
+    authService.load().subscribe(phones => {
+      this.phones = phones;
+      console.log(phones);
+    })
   }
 
 }

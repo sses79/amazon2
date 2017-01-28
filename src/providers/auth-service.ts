@@ -57,9 +57,9 @@ export class AuthService {
 
   }
 
-  load(): Observable<Phone> {
-    return this.authHttp.get('http://link5g.com/api/user')
-      .map(res => res.json());
+  load(): Observable<Phone[]> {
+    return this.authHttp.get('http://link5g.com/api/phones')
+      .map(res => <Phone[]>res.json());
   }
 
   public login(credentials) {
