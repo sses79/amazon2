@@ -27,7 +27,7 @@ export class MyApp {
       { title: 'Login', component: LoginPage },
       { title: 'Users', component: UsersPage },
       { title: 'Repos', component: ReposPage },
-      { title: 'Organisations', component: OrganisationsPage }
+      { title: 'Phones', component: OrganisationsPage }
     ];
 
   }
